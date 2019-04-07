@@ -3,11 +3,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
 	<meta property="og:type" content="website">
 
+	<script src="common/js/modernizr.min.js"></script>
+	<script>
+		var agent = navigator.userAgent.toLowerCase();
+		if(agent.search('iphone')>0 || agent.search('ipod')>0 || agent.search('android')>0){
+			location.href = 'sp/';
+	}
+	</script>
+	
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700" rel="stylesheet">
+	
+	<link rel="stylesheet" href="common/css/reset.css">
 	<link rel="stylesheet" href="common/css/colorbox.css">
 	<link rel="stylesheet" href="common/css/loading.css">
+	<link rel="stylesheet" href="common/css/header.css">
+	<link rel="stylesheet" href="common/css/footer.css">
+	<link rel="stylesheet" href="css/index.css">
 </head>
 <section class="loading">
 	<article class="ld02">
@@ -33,6 +47,45 @@
 	</article>
 
 </section>
+<!-- SCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js"></script>
+<script>
+	(function(window, _) {
+		const fetchPosts = async (url) => {
+		if (!url) return
+		try {
+			const res = await fetch(url)
+			const json = await res.json()
+			const posts = json.map(r => ({
+			id: r.id,
+			title: r.title.rendered,
+			excerpt: r.excerpt.rendered,
+			content: r.content.rendered,
+			eyeCatch: {
+			src: r._embedded['wp:featuredmedia'] && r._embedded['wp:featuredmedia'][0].media_details.sizes.medium.source_url,
+			caption: r._embedded['wp:featuredmedia'] && r._embedded['wp:featuredmedia'][0].caption.rendered,
+		}
+		}))
+		return posts
+		} catch (err) { throw err }
+	}
+
+	const renderPosts = (posts) => {
+	if (!posts) return
+		const targetEl = document.querySelector('#jsPosts')
+		const outputEl = document.querySelector('#tplPosts')
+		const compiled = _.template(outputEl.innerHTML)
+		targetEl.innerHTML = compiled({ posts })
+	}
+
+	document.addEventListener('DOMContentLoaded', async (ev) => {
+		const posts = await fetchPosts('https://news.twinengine.jp/wp-json/wp/v2/posts?_embed&categories=37&page=1')
+		renderPosts(posts)
+	})
+	})(window, _)
+</script>
+
+<script src="common/js/package.min.js"></script>
 <script src="js/index.js"></script>
 </body>
 </html>
