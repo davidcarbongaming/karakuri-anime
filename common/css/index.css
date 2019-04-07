@@ -1,0 +1,259 @@
+@charset "UTF-8";
+/*-------------------------------------
+	TITLE: からくりサーカス
+	CONTENT：　index
+/*-------------------------------------*/
+a:focus { outline: none; }
+img { vertical-align: bottom; }
+
+body {
+	width: 100%;
+	min-width: 1366px;
+	font-family: "Noto Sans JP", "游明朝", "Yu Mincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HiraMinProN-W3", "Meiryo UI", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	overflow-y: scroll;
+}
+.wrapp { 
+	position: fixed;
+	width: 100%;
+	min-width: 1366px;
+}
+/* MAIN WRAPP -------------------------*/
+.mainWrapp {
+	position: relative;
+	width: 100%;
+	background: url(../img/mainBg01.jpg) no-repeat center top;
+	background-size: 100% auto;
+	padding-bottom: 400px;
+}
+	/* SIDE LEFT */
+	.side_left {
+		position: absolute;
+		width: 300px;
+		top: 0;
+		left: calc( 26.4% - 300px);/*4.4%;*/
+		padding: 77px 0 0;
+	}
+		/* ONAIR */
+		.onair {
+			margin: 0 0 10px;
+		}
+		/* NEWS */
+		.news {
+			width: 300px;
+			margin: 0 0 10px;
+		}
+			.news h2 {
+				width: 300px;
+			}
+			.newsInner {
+				width: 300px;
+				margin: -32px 0 0;
+				padding: 42px 0 28px;
+				background: url(../img/news_footer.png) no-repeat left bottom #000;				
+			}
+				.newsTopic {
+					width: 260px;
+					margin: 0 auto;
+				}
+				.newsTopic li {
+					margin: 0 0 10px;
+					padding: 0 0 10px;
+					border-bottom: 1px solid #2a87b7;
+				}
+				.newsTopic li:nth-child( n+4) {
+					display: none;
+				}
+					.newsDate {
+						margin: 0 0 4px;
+						color: #2a87b7;
+						font-size: 12px;
+						line-height: 1;
+					}
+						.newsDate .tag {
+							display: inline-block;
+							margin: 0 0 0 10px;
+							padding: 0 10px;
+							color: #fff;
+							font-size: 10px;
+							line-height: 1.2;
+							vertical-align: middle;
+							background: #2a87b7;
+						}
+					.newsTxt {
+						font-size: 12px;
+						line-height: 1.5;
+					}
+						.newsTxt a {
+							color: #fff;
+							text-decoration: none;
+						}
+						.newsTxt a:hover {
+							color: #2a87b7;
+						}
+				.newsMore {
+					width: 100%;
+					margin: 8px 0 0;
+					padding: 0 20px 0 0;
+					text-align: right;
+					box-sizing: border-box;
+				}
+				.newsMore a:hover {
+					opacity: 0.8;
+				}
+		/* TWITTER TIMELINE */
+		.TW_TL {
+			width: 300px;
+			margin-top: 10px;
+		}
+		/* bnr_left BANNER */
+		.bnr_left {
+			width: 300px;
+			margin-top: 10px;
+		}
+		.bnr_left img {
+			width: 100%;
+		}
+			.bnr_left p:hover {
+				opacity: 0.9;
+			}
+	/* SIDE RIGHT */
+	.side_right {
+		position: absolute;
+		width: 308px;
+		padding: 64% 0 0;
+		top: 0;
+		right: calc( 23.4% - 308px);
+	}
+		.movie {
+			width: 308px;
+			height: 205px;
+		}
+			.movieBox {
+				position: relative;
+				width: 308px;
+				height: 205px;
+			}
+				.movieImg {
+					position: absolute;
+					width: 300px;
+					height: 169px;
+					bottom: 0;
+					left: 0;
+					overflow: hidden;
+				}
+					.movieImg img { width: 100%; }
+				.movieCover {
+					position: absolute;
+					width: 308px;
+					height: 205px;
+					top: 0;
+					left: 0;
+				}
+			.movieBox a:hover .movieCover {
+				opacity: 0.6;
+			}
+
+	/* COPY */
+	.copy {
+		position:absolute;
+		width: 8%;
+		top: 0;
+		right: 4.6%;
+	}
+		.copy01 {
+			float: right;
+			width: 45%;
+		}
+		.copy02 {
+			float: left;
+			width: 45%;
+			margin: 221.8% 0 0;
+		}
+			.copy img {
+				width: 100%;
+			}
+	/* KEY VISUAL */
+	.keyVisual {
+		width: 55.6%;
+		margin: 0 0 0 28%;
+	}
+		.keyVisual img {
+			width: 100%;
+			margin-top: 50px;
+		}
+
+/* FOOTER -----------------------------*/
+footer {
+	width: 100%;
+	padding: 60px 0 0;
+	background: #000;
+}
+	/* BANNER */
+	.banner {
+		width: 1366px;
+		margin: 0 auto 60px;
+	}
+		.banner ul {
+			width: 100%;
+			letter-spacing: -.4em;
+			text-align: center;
+		}
+		.banner ul:last-child{
+			margin-top: 30px;
+		}
+		.banner li {
+			display: inline-block;
+			width: 280px;
+			margin: 0 10px;
+		}
+		.banner a:hover {
+			opacity: 0.8;
+		}
+		.banner img {
+			width: 280px;
+		}
+	/* SHARE */
+	.share {
+		width: 533px;
+		height: 117px;
+		margin: 0 auto 66px;
+		padding: 25px 0 0;
+		text-align: center;
+		background: url(../img/share_bg.png) no-repeat left top;
+		box-sizing: border-box;
+	}
+		.share ul {
+			margin: 14px 0 0;
+			letter-spacing: -.4em;
+		}
+		.share li {
+			display: inline-block;
+			width: 30px;
+			margin: 0 10px;
+		}
+		.share a:hover {
+			opacity: 0.8;
+		}
+
+/* MOVIE Overlay ----------------------*/
+.mvBox {
+	width: 100%;
+	padding: 60px 0;
+	background: #000;
+}
+	.mwrapp {
+		width: 880px;
+		margin: 0 auto;
+		padding: 60px 0 60px;
+		background-image: url(../movie/img/star_line.png), url(../movie/img/star_line.png);
+		background-repeat: no-repeat;
+		background-position: left top, left bottom;
+	}
+
+/*-------------------------------------*/
+.clearfix:after {
+	display: block;
+	content: "";
+	clear: both;
+	height: 0;
+}
